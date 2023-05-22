@@ -1,0 +1,15 @@
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.3rem;
+    align-items: center;
+}
+
+ul{
+    display: flex;
+
+}
+
+ul li{
+    margin-inline: 1rem;
+}
