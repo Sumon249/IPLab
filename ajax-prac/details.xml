@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<states>
+    <state>
+        <name>Tamil Nadu</name>
+        <capital>Chennai</capital>
+    </state>
+    <state>
+        <name>West Bengal</name>
+        <capital>Kolkata</capital>
+    </state>
+    <state>
+        <name>Mizoram</name>
+        <capital>Aizawl</capital>
+    </state>
+</states>

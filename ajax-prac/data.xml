@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<states>
+  <state>
+    <name>California</name>
+    <capital>Los Angeles</capital>
+    <!-- Add more details for California if needed -->
+  </state>
+  <state>
+    <name>New York</name>
+    <capital>New York City</capital>
+    <!-- Add more details for New York if needed -->
+  </state>
+  <!-- Add more state elements as needed -->
+</states>

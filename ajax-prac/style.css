@@ -1,0 +1,19 @@
+body{
+}
+
+table{
+    /* text-align: center; */
+    margin-inline: auto;
+    border-collapse: collapse;
+}
+thead{
+    font-weight: bold;
+}
+table,tr,td{
+    padding: 10px;
+    border: 1px solid black;
+}
+
+tr:hover{
+    background-color: aliceblue;
+}

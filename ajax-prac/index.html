@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <td>State</td>
+                    <td>Capital</td>
+                </tr>
+            </thead>
+            <tr>
+                <td class="state">Tamil Nadu</td>
+                <td>Chennai</td>
+            </tr>
+            <tr>
+                <td class="state">West Bengal</td>
+                <td>Kolkata</td>
+
+            </tr>
+            <tr>
+                <td class="state">Mizoram</td>
+                <td>Aizawl</td>
+            </tr>
+        </table>
+    </div>
+    <div id="info"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+      // Function to handle click event on state name
+      document.querySelectorAll('.state').forEach(function(state) {
+        state.addEventListener('click', function() {
+          var stateName = this.textContent; // Get the clicked state name
+          var xhr = new XMLHttpRequest();
+          var url = 'details.xml'; // Path to your XML file
+
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              var xml = xhr.responseXML;
+              var stateElements = xml.getElementsByTagName('state');
+
+              for (var i = 0; i < stateElements.length; i++) {
+                var name = stateElements[i].getElementsByTagName('name')[0].textContent;
+                var capital = stateElements[i].getElementsByTagName('capital')[0].textContent;
+                
+                if (name === stateName) {
+                  // Display the details on the page
+                  var detailsDiv = document.getElementById('info');
+                  detailsDiv.innerHTML = '<h3>' + name + '</h3><p>Capital: ' + capital + '</p>';
+                  return; // Exit the loop if found
+                }
+              }
+            } else if (xhr.readyState === 4) {
+              alert('Error loading XML file');
+            }
+          };
+
+          xhr.open('GET', url, true);
+          xhr.send();
+        });
+      });
+    });
+    </script>
+</body>
+
+</html>
